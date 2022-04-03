@@ -87,9 +87,9 @@ public class ConsumirURL {
      * 
      * @param texto
      */
-    public JSONObject facade() {
+    public JSONObject facade(String mi_url) {
 
-        String texto = this.get_from_api("https://reqres.in/api/users");
+        String texto = this.get_from_api(mi_url);
 
         JSONObject json_antiguo = adapter_string_a_json(texto);
 
