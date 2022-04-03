@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RetoTecnicoApplication {
 
 	public static void main(String[] args) {
+		MiTest miTest = new MiTest();
+		miTest.test_facade();
 		SpringApplication.run(RetoTecnicoApplication.class, args);
 	}
 
