@@ -13,7 +13,7 @@ class EmployeeController {
     // Aggregate root
     // tag::get-aggregate-root[]
 
-    @Value("%{mi.direccion}")
+    @Value("${mi.direccion}")
     private String direccion;
 
     @GetMapping("/hola")
