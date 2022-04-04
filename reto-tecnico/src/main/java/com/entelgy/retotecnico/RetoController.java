@@ -18,11 +18,10 @@ class EmployeeController {
 
     @GetMapping("/hola")
     String hola() {
- 
-        ConsumirURL consum = new ConsumirURL();
+        RetoService consum = new RetoService();
         JSONObject hola = consum.facade(direccion);
         System.out.println(hola.toString(4));
-        return "hola manooo";
+        return "se aplico get exitosamente";
    }
 
     @PostMapping("/hola")

@@ -8,7 +8,7 @@ import java.net.URL;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class ConsumirURL {
+public class RetoService {
 
     public String get_from_api(String miURL) {
         try {
@@ -38,16 +38,16 @@ public class ConsumirURL {
         return "asd";
     }
 
-    public void hola() {
-        try {
-            URL url = new URL("https://reqres.in/api/users");
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
-                
-        } catch (Exception e) {
-            //TODO: handle exception
-        }
-    }
+//    public void hola() {
+//        try {
+//            URL url = new URL("https://reqres.in/api/users");
+//            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+//            con.setRequestMethod("GET");
+//                
+//        } catch (Exception e) {
+//            //TODO: handle exception
+//        }
+//    }
 
     /*
      * String a JSON...
@@ -88,14 +88,9 @@ public class ConsumirURL {
      * @param texto
      */
     public JSONObject facade(String mi_url) {
-
         String texto = this.get_from_api(mi_url);
-
         JSONObject json_antiguo = adapter_string_a_json(texto);
-
         JSONObject json_nuevo = adapter_json_a_json(json_antiguo);
-
         return json_nuevo;
-
     }
 }
