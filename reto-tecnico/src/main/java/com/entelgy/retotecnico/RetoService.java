@@ -30,7 +30,6 @@ public class RetoService {
             String response = new String();
             for (String line; (line = br.readLine()) != null; response += line);
 
-
             conn.disconnect();
             return response;
 
@@ -39,17 +38,6 @@ public class RetoService {
         }
         return "no se puede llegar aqui";
     }
-
-//    public void hola() {
-//        try {
-//            URL url = new URL("https://reqres.in/api/users");
-//            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-//            con.setRequestMethod("GET");
-//                
-//        } catch (Exception e) {
-//            //TODO: handle exception
-//        }
-//    }
 
     /*
      * String a JSON...
