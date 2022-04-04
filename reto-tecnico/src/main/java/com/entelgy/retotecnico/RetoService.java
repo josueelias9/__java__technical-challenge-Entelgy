@@ -83,7 +83,7 @@ public class RetoService {
         String texto = this.get_from_api(mi_url);
         JSONObject json_antiguo = adapter_string_a_json(texto);
         JSONObject json_nuevo = adapter_json_a_json(json_antiguo);
-        return json_nuevo.toString();
+        return json_nuevo.toString(0);
     }
 
 }

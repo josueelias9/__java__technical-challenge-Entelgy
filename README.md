@@ -50,16 +50,12 @@ a este formato
   - __adapter_string_a_json__: sigue el patron de diseño "adapter". Recibe un string y lo transforma a json.
   - __adapter_json_a_json__: tambien sigue el patron de diseño "adpater". Su funcion es la de convertir el formato json de la URL consumida a al formato json solicitado.
 - una vez finalizado, la funcion facade devuelve el string al controller y este a su vez lo envia como response al cliente.
-# Despliegue
-```bash
-cd (ubicacion del repo)/reto-tecnico-entelgy/reto-tecnico
-./mvnw spring-boot:run
-```
-# Referencia
-- Spring initializer [link](https://start.spring.io/)
-- Guias oficiales de spring [link](https://spring.io/guides)
 
 # testing
+Se usa junit y las librerias de spring test para evaluar el correcto funcionamiento del programa
+
+- __RetoTecnicoApplicationTests.java__: Se evalua con los metodos _assert_ que las funciones de la clase _RetoService_ esten funcionando correctamente
+- __HttpRequestTest.java__: se testea el controller. Se revisa que la respuesta de los metodos get y post (sobre todo post) es la esperada.
 # Estructura del proyecto
 ```
 |-- reto-tecnico-entelgy (repositorio)
@@ -71,9 +67,17 @@ cd (ubicacion del repo)/reto-tecnico-entelgy/reto-tecnico
                 |-- RetoController (controllador)
                 |-- RetoService (servicio)
             |-- test/java/com/entelgy/retotecnico
-                |-- RetoTecnicoApplicationTests.java (teseo junit)
+                |-- RetoTecnicoApplicationTests.java (test al servicio con junit)
+                |-- HttpRequestTest.java (test al controller con spring test)
 ```
-# spring
-[enlace](https://anchormen.nl/blog/big-data-services/spring-boot-tutorial/)
+# Despliegue
+```bash
+cd (ubicacion del repo)/reto-tecnico-entelgy/reto-tecnico
+./mvnw spring-boot:run
+```
 
-![](imagenes/spring-estructura.png)
+# Referencia
+- Spring initializer (oficial) [link](https://start.spring.io/)
+- Guias oficiales de spring (oficial) [link](https://spring.io/guides)
+- arquitctura spring (no oficial) [link](https://anchormen.nl/blog/big-data-services/spring-boot-tutorial/)
+

@@ -38,7 +38,16 @@ class RetoController {
 
         } catch (Exception e) {
             requestStringOut = "no es un formato json";
-            // TODO: handle exception
+        }
+
+        String response_1= "{\"data\":[\"1|Bluth|george.bluth@reqres.in\",\"2|Weaver|janet.weaver@reqres.in\",\"3|Wong|emma.wong@reqres.in\",\"4|Holt|eve.holt@reqres.in\",\"5|Morris|charles.morris@reqres.in\",\"6|Ramos|tracey.ramos@reqres.in\"]}";
+        String request_1 = "{\"accion\":\"si\"}";
+
+        if(response_1.equals(requestStringOut)){
+            System.out.println("son iguales!!!");
+        }   
+        if(request_1.equals(requestString)){
+            System.out.println("tambien son igualeeees");
         }
         return requestStringOut;
     }
