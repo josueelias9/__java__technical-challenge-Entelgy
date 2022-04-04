@@ -79,21 +79,11 @@ public class RetoService {
      * 
      * @param texto
      */
-    public JSONObject facade(String mi_url) {
+    public String facade(String mi_url) {
         String texto = this.get_from_api(mi_url);
         JSONObject json_antiguo = adapter_string_a_json(texto);
         JSONObject json_nuevo = adapter_json_a_json(json_antiguo);
-        return json_nuevo;
+        return json_nuevo.toString();
     }
 
-
-    public String hola1(String direccion, String requestString){
-        JSONObject validacion = this.adapter_string_a_json(requestString);
-        if (validacion.getString("accion").equals("si")) {
-            return this.facade(direccion).toString();
-            
-        }else{
-            return "la accion solicitada no es la correcta";
-        }	
-    }
 }

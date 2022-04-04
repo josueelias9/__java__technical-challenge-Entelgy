@@ -35,7 +35,31 @@ a este formato
 ```
 - el json a formatear debe de consumirse de la siguiente URL https://reqres.in/api/users. Esta debe ser consumida desde el archvo properties del backend.
 - Tambien se solicita que se aplique testeo de las funciones.
+# funcionamiento
+![](imagenes/secuencia2.png)
+- el cliente envia un post con su respectivo request
+- el controller recibe el request en forma de string. Evalua si tiene el formato correcto. Para este ejercicio se define que el formato del request del cliente debe ser el siguiente
+```json
+{
+    "accion":"si"
+}
+```
+- Si todo esta bien, el controller le pasa al service la URL a consumir (https://reqres.in/api/users) desde el archivo properties.
+- service tiene una funcion que sigue el patron de diseño "facade". Esta funcion llama a tres otras funciones:
+  - __get_from_api__: hace un get a la URL entregada como parametro y devuelve un string
+  - __adapter_string_a_json__: sigue el patron de diseño "adapter". Recibe un string y lo transforma a json.
+  - __adapter_json_a_json__: tambien sigue el patron de diseño "adpater". Su funcion es la de convertir el formato json de la URL consumida a al formato json solicitado.
+- una vez finalizado, la funcion facade devuelve el string al controller y este a su vez lo envia como response al cliente.
+# Despliegue
+```bash
+cd (ubicacion del repo)/reto-tecnico-entelgy/reto-tecnico
+./mvnw spring-boot:run
+```
+# Referencia
+- Spring initializer [link](https://start.spring.io/)
+- Guias oficiales de spring [link](https://spring.io/guides)
 
+# testing
 # Estructura del proyecto
 ```
 |-- reto-tecnico-entelgy (repositorio)
@@ -53,29 +77,3 @@ a este formato
 [enlace](https://anchormen.nl/blog/big-data-services/spring-boot-tutorial/)
 
 ![](imagenes/spring-estructura.png)
-
-# funcionamiento
-- el cliente envia un post con su respectivo request
-- el controller recibe el request en forma de string y se lo pasa al service
-![](imagenes/secuencia.png)
-- el service evalua si si el cuepo tiene el formato correcto 
-```json
-{
-    "accion":"si"
-}
-```
-- la capa controller recibe el request y se lo envia a las funciones facade de la capa servicio.
-- si todo esta ok, la capa servicio se encarga
-- aqui se valida que el request enviado por el cliente tiene el siguiente formato
-- de estar bien, las funciones de la ca
-
-# Despliegue
-```bash
-cd (ubicacion del repo)/reto-tecnico-entelgy/reto-tecnico
-./mvnw spring-boot:run
-```
-# Referencia
-- Spring initializer [link](https://start.spring.io/)
-- Guias oficiales de spring [link](https://spring.io/guides)
-
-# testing

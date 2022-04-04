@@ -22,7 +22,7 @@ class RetoTecnicoApplicationTests {
 	@Test
 	void test_facade() throws JSONException {
 		// metodo a testear
-		JSONObject json_de_api = retoService.facade(direccion);
+		JSONObject json_de_api = new JSONObject(retoService.facade(direccion));
 		JSONObject json_test = new JSONObject(
 				"	{'data': [    '1|Bluth|george.bluth@reqres.in',    '2|Weaver|janet.weaver@reqres.in',    '3|Wong|emma.wong@reqres.in',    '4|Holt|eve.holt@reqres.in',    '5|Morris|charles.morris@reqres.in',    '6|Ramos|tracey.ramos@reqres.in']}");
 		boolean test = true;
