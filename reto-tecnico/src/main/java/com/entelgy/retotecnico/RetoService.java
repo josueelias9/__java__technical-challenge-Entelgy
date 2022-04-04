@@ -7,7 +7,9 @@ import java.net.URL;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RetoService {
 
     public String get_from_api(String miURL) {
@@ -92,5 +94,9 @@ public class RetoService {
         JSONObject json_antiguo = adapter_string_a_json(texto);
         JSONObject json_nuevo = adapter_json_a_json(json_antiguo);
         return json_nuevo;
+    }
+
+    public int mi_funcion(){
+        return 3;
     }
 }
