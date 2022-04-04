@@ -37,7 +37,7 @@ public class RetoService {
         } catch (Exception e) {
             System.out.println("Exception in NetClientGet:- " + e);
         }
-        return "asd";
+        return "no se puede llegar aqui";
     }
 
 //    public void hola() {
@@ -96,7 +96,4 @@ public class RetoService {
         return json_nuevo;
     }
 
-    public int mi_funcion(){
-        return 3;
-    }
 }
