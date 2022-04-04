@@ -72,6 +72,8 @@ public class RetoService {
     }
 
     /**
+     * de URL a JSON solicitado
+     * 
      * entrada: string recumerado de la url
      * sailda: JSONobject con el formato solcitado
      * 
@@ -84,4 +86,14 @@ public class RetoService {
         return json_nuevo;
     }
 
+
+    public String hola1(String direccion, String requestString){
+        JSONObject validacion = this.adapter_string_a_json(requestString);
+        if (validacion.getString("accion").equals("si")) {
+            return this.facade(direccion).toString();
+            
+        }else{
+            return "la accion solicitada no es la correcta";
+        }	
+    }
 }
